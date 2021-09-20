@@ -7,17 +7,18 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <TableLayout
+
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/main_activity_tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabMode="fixed">
-    </TableLayout>
+    </com.google.android.material.tabs.TabLayout>
 
-    <androidx.viewpager.widget.ViewPager
+    <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/main_activity_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </androidx.viewpager.widget.ViewPager>
+    </androidx.viewpager2.widget.ViewPager2>
 
 </LinearLayout>

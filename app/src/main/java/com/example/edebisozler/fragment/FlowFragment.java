@@ -1,4 +1,4 @@
-package com.example.edebisozler;
+package com.example.edebisozler.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +9,9 @@ import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-class FlowFragment extends Fragment {
+import com.example.edebisozler.R;
+
+public class FlowFragment extends Fragment {
 
 
     public static FlowFragment newInstance(){
