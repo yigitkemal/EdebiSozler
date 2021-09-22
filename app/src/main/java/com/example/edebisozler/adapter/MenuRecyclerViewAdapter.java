@@ -53,7 +53,7 @@ public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerVi
 
         holder.menuListItemBinding.menuImageText.setText(quotesList.get(position).getQuotesText().trim());
         Picasso.get()
-                .load(R.drawable.image1)
+                .load(quotesList.get(position).getQuotesPictures())
                 .into(holder.menuListItemBinding.menuImage, new Callback() {
                     @Override
                     public void onSuccess() {

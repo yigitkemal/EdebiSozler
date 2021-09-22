@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
 
 
-
         ViewpagerAdapter adapter = new ViewpagerAdapter(this);
         binding.mainActivityViewpager.setAdapter(adapter);
 

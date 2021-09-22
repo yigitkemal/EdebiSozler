@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import androidx.viewpager2.adapter.FragmentViewHolder;
 
 import android.view.LayoutInflater;
@@ -39,14 +40,15 @@ public class MenuFragment extends Fragment {
         View view = binding.getRoot();
 
 
-        Quotes quotes1 = new Quotes("Albert Einstein", "Hayal gücü bilgiden kuvvetlidir.", "image1.jpg");
-        Quotes quotes2 = new Quotes("Mark Twain", "İlerleyebilmenin sırrı başlamaktır.", "image2.jpg");
-        Quotes quotes3 = new Quotes("Arianna Huffington", "Dünyada ne zaman bir şey yaparsan yap; eleştiri olacak.", "image3.jpg");
-        Quotes quotes4 = new Quotes("Jack Ma", "Gerçek başarısızlık, hiçbir şey denemeden öylece oturmaktır.", "image.jpg");
-        Quotes quotes5 = new Quotes("Albert Einstein", "Hayal gücü bilgiden kuvvetlidir.", "image1.jpg");
-        Quotes quotes6 = new Quotes("Mark Twain", "İlerleyebilmenin sırrı başlamaktır.", "image2.jpg");
-        Quotes quotes7 = new Quotes("Arianna Huffington", "Dünyada ne zaman bir şey yaparsan yap; eleştiri olacak.", "image3.jpg");
-        Quotes quotes8 = new Quotes("Jack Ma", "Gerçek başarısızlık, hiçbir şey denemeden öylece oturmaktır.", "image.jpg");
+        Quotes quotes1 = new Quotes("Albert Einstein", "Hayal gücü bilgiden kuvvetlidir.", "https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg?size=626&ext=jpg");
+        Quotes quotes2 = new Quotes("Mark Twain", "İlerleyebilmenin sırrı başlamaktır.", "https://i.pinimg.com/originals/a7/3d/6e/a73d6e4ac85c6a822841e449b24c78e1.jpg");
+        Quotes quotes3 = new Quotes("Arianna Huffington", "Dünyada ne zaman bir şey yaparsan yap; eleştiri olacak.", "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823__340.jpg");
+        Quotes quotes4 = new Quotes("Jack Ma", "Gerçek başarısızlık, hiçbir şey denemeden öylece oturmaktır.", "https://pbs.twimg.com/media/E9YJOcmWQAczMrY.jpg");
+        Quotes quotes5 = new Quotes("Albert Einstein", "Hayal gücü bilgiden kuvvetlidir.", "https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg?size=626&ext=jpg");
+        Quotes quotes6 = new Quotes("Mark Twain", "İlerleyebilmenin sırrı başlamaktır.", "https://i.pinimg.com/originals/a7/3d/6e/a73d6e4ac85c6a822841e449b24c78e1.jpg");
+        Quotes quotes7 = new Quotes("Arianna Huffington", "Dünyada ne zaman bir şey yaparsan yap; eleştiri olacak.", "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823__340.jpg");
+        Quotes quotes8 = new Quotes("Jack Ma", "Gerçek başarısızlık, hiçbir şey denemeden öylece oturmaktır.", "https://pbs.twimg.com/media/E9YJOcmWQAczMrY.jpg");
+
 
 
         quotesArrayList.add(quotes1);
@@ -57,10 +59,20 @@ public class MenuFragment extends Fragment {
         quotesArrayList.add(quotes6);
         quotesArrayList.add(quotes7);
         quotesArrayList.add(quotes8);
+        quotesArrayList.add(quotes1);
+        quotesArrayList.add(quotes2);
+        quotesArrayList.add(quotes3);
+        quotesArrayList.add(quotes4);
+        quotesArrayList.add(quotes5);
+        quotesArrayList.add(quotes6);
+        quotesArrayList.add(quotes7);
+        quotesArrayList.add(quotes8);
+
+
 
         System.out.println(quotesArrayList.size() + "-----------------------------------------------");
 
-        binding.recyclerviewMenu.setLayoutManager(new GridLayoutManager(view.getContext(), 2));
+        binding.recyclerviewMenu.setLayoutManager(new StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL));
         menuRecyclerViewAdapter = new MenuRecyclerViewAdapter(quotesArrayList);
 
         if (isAdded())
