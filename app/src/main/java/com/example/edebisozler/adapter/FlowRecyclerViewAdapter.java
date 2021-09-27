@@ -41,13 +41,13 @@ public class FlowRecyclerViewAdapter extends RecyclerView.Adapter<FlowRecyclerVi
 
     @Override
     public void onBindViewHolder(@NonNull FlowRecyclerViewHolder holder, int position) {
-        holder.binding.menuImageText.setText(quotesList.get(position).getQuotesText().trim());
+        holder.binding.flowImageText.setText(quotesList.get(position).getQuotesText().trim());
         Picasso.get()
                 .load(quotesList.get(position).getQuotesPictures())
-                .into(holder.binding.menuImage, new Callback() {
+                .into(holder.binding.flowImage, new Callback() {
                     @Override
                     public void onSuccess() {
-                        holder.binding.progressCircular.setVisibility(View.INVISIBLE);
+                        holder.binding.flowProgressCircular.setVisibility(View.INVISIBLE);
                         System.out.println("düzgün çalıştı");
                     }
                     @Override

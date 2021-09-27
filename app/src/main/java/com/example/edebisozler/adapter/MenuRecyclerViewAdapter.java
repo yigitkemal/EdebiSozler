@@ -1,5 +1,6 @@
 package com.example.edebisozler.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +8,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.edebisozler.MainActivity;
+import com.example.edebisozler.PopupActivity;
 import com.example.edebisozler.Quotes;
 import com.example.edebisozler.R;
 import com.example.edebisozler.databinding.MenuListItemBinding;
@@ -57,7 +60,7 @@ public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerVi
                 .into(holder.menuListItemBinding.menuImage, new Callback() {
                     @Override
                     public void onSuccess() {
-                        holder.menuListItemBinding.progressCircular.setVisibility(View.INVISIBLE);
+                        holder.menuListItemBinding.menuProgressCircular.setVisibility(View.INVISIBLE);
                     }
 
                     @Override
@@ -65,6 +68,17 @@ public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerVi
                         System.out.println(" Bir hata var :" + e);
                     }
                 });
+
+
+        holder.menuListItemBinding.menuImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println(" tıklanan motivasyon sözü : "+quotesList.get(position).getQuotesText());
+                Intent intent = PopupActivity.newIntent(holder.itemView.getContext(),quotesList.get(position));
+                holder.itemView.getContext().startActivity(intent);
+
+            }
+        });
     }
 
     @Override
