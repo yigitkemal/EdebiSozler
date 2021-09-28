@@ -21,7 +21,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-
         <ImageView
             android:id="@+id/menu_image"
             android:layout_width="match_parent"

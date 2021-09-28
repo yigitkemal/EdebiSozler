@@ -54,7 +54,13 @@ public class PopupFragment extends Fragment {
                     }
                 });
 
-
+        binding.fabShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //share butonu için işlemleri burada gerçekleştireceğim
+                System.out.println("share butonu tıklandı");
+            }
+        });
 
         return view;
     }
