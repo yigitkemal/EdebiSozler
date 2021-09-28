@@ -1,4 +1,4 @@
-package com.example.edebisozler;
+package com.example.edebisozler.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -9,8 +9,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.edebisozler.R;
 import com.example.edebisozler.databinding.ActivityPopupBinding;
 import com.example.edebisozler.fragment.PopupFragment;
+import com.example.edebisozler.model.Quotes;
 
 public class PopupActivity extends AppCompatActivity {
 
@@ -22,6 +24,8 @@ public class PopupActivity extends AppCompatActivity {
         binding = ActivityPopupBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
+
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = fragmentManager.findFragmentById(R.id.popup_activity_framelayout);

@@ -1,4 +1,4 @@
-package com.example.edebisozler;
+package com.example.edebisozler.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -12,11 +12,13 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.edebisozler.R;
 import com.example.edebisozler.adapter.ViewpagerAdapter;
 import com.example.edebisozler.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout mDrawer;
     Toolbar toolbar;
     NavigationView nvDrawer;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

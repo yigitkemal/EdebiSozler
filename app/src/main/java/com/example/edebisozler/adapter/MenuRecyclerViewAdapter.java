@@ -8,10 +8,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.edebisozler.MainActivity;
-import com.example.edebisozler.PopupActivity;
-import com.example.edebisozler.Quotes;
-import com.example.edebisozler.R;
+import com.example.edebisozler.activity.PopupActivity;
+import com.example.edebisozler.model.Quotes;
 import com.example.edebisozler.databinding.MenuListItemBinding;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;

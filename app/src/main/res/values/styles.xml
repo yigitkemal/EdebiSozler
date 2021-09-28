@@ -16,13 +16,18 @@
     </style>
 
     <style name="CustomStyle" parent="Base.Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowCloseOnTouchOutside">true</item>
+
     </style>
 
 
     <style name="DrawerIconStyle" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="color">?attr/colorPrimary</item>
     </style>
+
+
 
 </resources>

@@ -3,14 +3,12 @@ package com.example.edebisozler.fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.edebisozler.Quotes;
-import com.example.edebisozler.R;
+import com.example.edebisozler.model.Quotes;
 import com.example.edebisozler.databinding.FragmentPopupBinding;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -36,6 +34,8 @@ public class PopupFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentPopupBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
+
+
 
         binding.popupImageText.setText(quotes.getQuotesText());
         Picasso.get()

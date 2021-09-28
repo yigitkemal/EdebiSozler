@@ -7,12 +7,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.edebisozler.Quotes;
+import com.example.edebisozler.model.Quotes;
 import com.example.edebisozler.databinding.FlowListItemBinding;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class FlowRecyclerViewAdapter extends RecyclerView.Adapter<FlowRecyclerViewAdapter.FlowRecyclerViewHolder> {
