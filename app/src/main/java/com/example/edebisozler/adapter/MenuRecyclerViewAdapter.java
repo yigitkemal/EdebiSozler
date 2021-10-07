@@ -51,7 +51,6 @@ public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerVi
 
     @Override
     public void onBindViewHolder(@NonNull MenuRecyclerViewHolder holder, int position) {
-
         holder.menuListItemBinding.menuImageText.setText(quotesList.get(position).getQuotesText().trim());
         Picasso.get()
                 .load(quotesList.get(position).getQuotesPictures())

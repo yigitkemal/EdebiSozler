@@ -10,4 +10,7 @@ public interface EdebiSozlerAPI {
     @GET("all_quotes.php")
     Call<Example> getData();
 
+    @GET("all_quotes.php")
+    Call<Example> getFavorites(String quotesUtterer, String quotesText);
+
 }

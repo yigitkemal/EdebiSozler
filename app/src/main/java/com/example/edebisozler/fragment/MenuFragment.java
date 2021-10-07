@@ -80,10 +80,10 @@ public class MenuFragment extends Fragment {
                     List<Quotes> responseList = response.body().getEdebiSozler();
                     quotesArrayList = new ArrayList<>(responseList);
 
-                    for(Quotes q: responseList){
+                    /*for(Quotes q: responseList){
                         Log.e("-----------","---------");
                         Log.e("quotes id",q.getUtterer());;
-                    }
+                    }*/
 
                     binding.recyclerviewMenu.setLayoutManager(new StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL));
                     menuRecyclerViewAdapter = new MenuRecyclerViewAdapter(quotesArrayList);

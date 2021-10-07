@@ -12,7 +12,10 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+import androidx.room.Room;
 
+import com.example.edebisozler.activity.roomdb.QuotesDao;
+import com.example.edebisozler.activity.roomdb.QuotesFavDatabase;
 import com.example.edebisozler.adapter.MenuRecyclerViewAdapter;
 import com.example.edebisozler.model.Example;
 import com.example.edebisozler.model.Quotes;
@@ -25,6 +28,9 @@ import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.disposables.CompositeDisposable;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -34,6 +40,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class FlowFragment extends Fragment {
 
     ArrayList<Quotes> quotesArrayList = new ArrayList<>();
+    ArrayList<Quotes> favQuotesList;
     
     FragmentFlowBinding binding;
     FlowRecyclerViewAdapter flowRecyclerViewAdapter;
@@ -42,8 +49,27 @@ public class FlowFragment extends Fragment {
     public String BASE_URL = "https://thetreemedia.com/edebi_sozler_app/";
     Retrofit retrofit;
 
+    QuotesFavDatabase db;
+    QuotesDao quotesDao;
+
+    private CompositeDisposable compositeDisposable = new CompositeDisposable();
+
     public static FlowFragment newInstance(){
         return new FlowFragment();
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        db = Room.databaseBuilder(getContext(), QuotesFavDatabase.class, "FavQuotes").build();
+        quotesDao = db.quotesDao();
+
+        compositeDisposable.add(quotesDao.getAll()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(this::handleResponse)
+        );
     }
 
     @Nullable
@@ -81,11 +107,16 @@ public class FlowFragment extends Fragment {
 
                     for(Quotes q: responseList){
                         Log.e("-----------","---------");
-                        Log.e("quotes id",q.getUtterer());;
+                        Log.e("quotes id",q.getQuotesUtterer());;
                     }
 
                     binding.recyclerviewFlow.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL,false));
-                    flowRecyclerViewAdapter = new FlowRecyclerViewAdapter(quotesArrayList);
+                    if(favQuotesList != null){
+
+                        flowRecyclerViewAdapter = new FlowRecyclerViewAdapter(quotesArrayList,favQuotesList);
+                    }else{
+                        flowRecyclerViewAdapter = new FlowRecyclerViewAdapter(quotesArrayList);
+                    }
 
                     if(isAdded())
                         binding.recyclerviewFlow.setAdapter(flowRecyclerViewAdapter);
@@ -98,5 +129,21 @@ public class FlowFragment extends Fragment {
             }
         });
     }
+
+
+    private void handleResponse(List<Quotes> favComingList) {
+        favQuotesList = new ArrayList<>(favComingList);
+    }
+
+
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        compositeDisposable.clear();
+    }
+
+
+
 
 }

@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="100dp"
-        android:padding="15dp"
+        android:layout_marginHorizontal="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -99,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="5dp"
-                android:text="Albert Einstein"
+                android:text="Anonim"
                 android:textColor="@color/white" />
 
         </androidx.cardview.widget.CardView>
@@ -118,41 +118,88 @@
         app:layout_constraintTop_toBottomOf="@+id/relative_card">
 
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_star"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:cardCornerRadius="10dp"
             android:layout_margin="10dp"
-            android:elevation="10dp"
-            android:src="@drawable/ic_star_outlined"
-            app:backgroundTint="@color/white" />
+            android:padding="20dp"
+            >
+            <ToggleButton
+                android:id="@+id/button_favorite"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/toggle_star"
+                android:layout_gravity="center"
+                android:checked="false"
+                android:text=""
+                android:textOff=""
+                android:textOn=""/>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_copy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:elevation="10dp"
-            android:src="@drawable/ic_copy"
-            app:backgroundTint="@color/white" />
+        </androidx.cardview.widget.CardView>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:cardCornerRadius="10dp"
             android:layout_margin="10dp"
-            android:elevation="10dp"
-            android:src="@drawable/ic_cloud"
-            app:backgroundTint="@color/white" />
+            android:padding="20dp"
+            >
+            <ToggleButton
+                android:id="@+id/button_copy"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_copy"
+                android:layout_gravity="center"
+                android:checked="false"
+                android:clickable="true"
+                android:text=""
+                android:textOff=""
+                android:textOn=""/>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_share"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:cardCornerRadius="10dp"
             android:layout_margin="10dp"
-            android:elevation="10dp"
-            android:src="@drawable/ic_share"
-            app:backgroundTint="@color/white" />
+            android:padding="20dp"
+            android:onClick="saveImage"
+            >
+            <ToggleButton
+                android:id="@+id/button_save"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_cloud"
+                android:layout_gravity="center"
+                android:checked="false"
+                android:onClick="saveImage"
+                android:text=""
+                android:textOff=""
+                android:textOn=""/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:cardCornerRadius="10dp"
+            android:layout_margin="10dp"
+            android:padding="20dp"
+            >
+            <ToggleButton
+                android:id="@+id/button_share"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_share"
+                android:layout_gravity="center"
+                android:checked="false"
+                android:text=""
+                android:textOff=""
+                android:textOn=""/>
+
+        </androidx.cardview.widget.CardView>
 
 
     </LinearLayout>

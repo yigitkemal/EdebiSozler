@@ -28,6 +28,9 @@
         <item name="color">?attr/colorPrimary</item>
     </style>
 
+    <style name="Theme.FavMenu" parent="android:Theme.Holo">
+        <item name="android:homeAsUpIndicator">@drawable/ic_arrow_back</item>
+    </style>
 
 
 </resources>
