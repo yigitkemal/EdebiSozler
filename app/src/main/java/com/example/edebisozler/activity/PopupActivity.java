@@ -25,11 +25,8 @@ public class PopupActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-
-
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = fragmentManager.findFragmentById(R.id.popup_activity_framelayout);
-
 
         if(fragment == null){
             fragment = PopupFragment.newInstance();

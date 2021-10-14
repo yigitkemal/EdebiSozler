@@ -43,6 +43,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:maxLines="10"
+            android:layout_margin="5dp"
             android:text="motivasyon"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"

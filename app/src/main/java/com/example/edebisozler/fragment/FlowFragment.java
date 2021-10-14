@@ -27,10 +27,12 @@ import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
+import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -80,10 +82,15 @@ public class FlowFragment extends Fragment {
         binding = FragmentFlowBinding.inflate(inflater,container,false);
         View view = binding.getRoot();
 
+
+        OkHttpClient client = new OkHttpClient.Builder()
+                .connectTimeout(100, TimeUnit.SECONDS)
+                .readTimeout(100, TimeUnit.SECONDS).build();
+
         Gson gson = new GsonBuilder().setLenient().create();
 
         retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(BASE_URL).client(client)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
@@ -110,9 +117,8 @@ public class FlowFragment extends Fragment {
                         Log.e("quotes id",q.getQuotesUtterer());;
                     }
 
-                    binding.recyclerviewFlow.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL,false));
+                    binding.recyclerviewFlow.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL,false));
                     if(favQuotesList != null){
-
                         flowRecyclerViewAdapter = new FlowRecyclerViewAdapter(quotesArrayList,favQuotesList);
                     }else{
                         flowRecyclerViewAdapter = new FlowRecyclerViewAdapter(quotesArrayList);
