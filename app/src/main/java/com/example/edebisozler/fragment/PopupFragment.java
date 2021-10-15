@@ -3,7 +3,9 @@ package com.example.edebisozler.fragment;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -23,6 +25,7 @@ import com.example.edebisozler.model.Quotes;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -37,6 +40,8 @@ public class PopupFragment extends Fragment {
     FragmentPopupBinding binding;
 
     private Quotes quotes;
+
+    Bitmap imageViewHolder;
 
     ArrayList<Quotes> favQuotesList;
     QuotesFavDatabase db;
@@ -78,6 +83,7 @@ public class PopupFragment extends Fragment {
 
 
         binding.popupImageText.setText(quotes.getQuotesText());
+        binding.popupImageUtterer.setText(quotes.getQuotesUtterer());
         Picasso.get()
                 .load(quotes.getQuotesPictures())
                 .fit()
@@ -149,6 +155,19 @@ public class PopupFragment extends Fragment {
                 Toast.makeText(getContext(),"Görüntü Galeriye Kaydedildi...",Toast.LENGTH_LONG).show();
             }
         });
+        binding.buttonShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent shareIntent = new Intent();
+                binding.quotesCard.setDrawingCacheEnabled(true);
+                imageViewHolder = binding.quotesCard.getDrawingCache();
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.putExtra(Intent.EXTRA_STREAM, getImageUri(getContext(),imageViewHolder));
+                shareIntent.setType("image/jpeg");
+                startActivity(Intent.createChooser(shareIntent, "Share Image"));
+            }
+        });
+
 
         return view;
     }
@@ -172,6 +191,12 @@ public class PopupFragment extends Fragment {
 
     }
 
+    public Uri getImageUri(Context inContext, Bitmap inImage) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
+        return Uri.parse(path);
+    }
 
 
 }
