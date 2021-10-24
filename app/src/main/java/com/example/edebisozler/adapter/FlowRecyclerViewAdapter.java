@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +20,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
-import com.example.edebisozler.R;
 import com.example.edebisozler.activity.roomdb.QuotesDao;
 import com.example.edebisozler.activity.roomdb.QuotesFavDatabase;
 import com.example.edebisozler.model.Quotes;
@@ -30,9 +28,6 @@ import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -82,13 +77,13 @@ public class FlowRecyclerViewAdapter extends RecyclerView.Adapter<FlowRecyclerVi
     public FlowRecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         db = Room.databaseBuilder(parent.getContext(), QuotesFavDatabase.class, "FavQuotes").build();
         quotesDao = db.quotesDao();
-
         FlowListItemBinding binding = FlowListItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         return new FlowRecyclerViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull FlowRecyclerViewHolder holder, int position) {
+        holder.binding.buttonFavorite.setChecked(false);
         holder.binding.flowImageText.setText(quotesList.get(position).getQuotesText().trim());
         holder.binding.flowImageUtterer.setText(quotesList.get(position).getQuotesUtterer().trim());
         Picasso.get()
@@ -111,7 +106,10 @@ public class FlowRecyclerViewAdapter extends RecyclerView.Adapter<FlowRecyclerVi
                     && (quotesList.get(position).getQuotesUtterer().equals(favQuotesList.get(i).getQuotesUtterer()))) {
                 holder.binding.buttonFavorite.setChecked(true);
                 System.out.println("değerler eşittir");
-            }else{
+
+            }
+            else{
+                //holder.binding.buttonFavorite.setChecked(false);
                 System.out.println("değerler eşit değildir");
             }
         }
@@ -165,7 +163,6 @@ public class FlowRecyclerViewAdapter extends RecyclerView.Adapter<FlowRecyclerVi
                 Toast.makeText(holder.itemView.getContext(),"Görüntü Galeriye Kaydedildi...",Toast.LENGTH_LONG).show();
             }
         });
-
         holder.binding.buttonShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -181,6 +178,8 @@ public class FlowRecyclerViewAdapter extends RecyclerView.Adapter<FlowRecyclerVi
 
     }
 
+
+
     @Override
     public int getItemCount() {
         return quotesList.size();
@@ -193,6 +192,8 @@ public class FlowRecyclerViewAdapter extends RecyclerView.Adapter<FlowRecyclerVi
         String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
         return Uri.parse(path);
     }
+
+
 }
 
 

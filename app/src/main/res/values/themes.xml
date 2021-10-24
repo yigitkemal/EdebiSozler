@@ -18,6 +18,7 @@
         <item name="windowActionBar">false</item>
 
         <item name="drawerArrowStyle">@style/DrawerIconStyle</item>
+
     </style>
 
     <style name="FloatingActionButtonStyle" parent="Widget.Design.FloatingActionButton">
