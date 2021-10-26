@@ -106,32 +106,3 @@ public class MenuFragment extends Fragment {
 }
 
 
-
-/*
-        Quotes quotes1 = new Quotes("Albert Einstein", "Hayal gücü bilgiden kuvvetlidir.", "https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg?size=626&ext=jpg");
-        Quotes quotes2 = new Quotes("Mark Twain", "İlerleyebilmenin sırrı başlamaktır.", "https://i.pinimg.com/originals/a7/3d/6e/a73d6e4ac85c6a822841e449b24c78e1.jpg");
-        Quotes quotes3 = new Quotes("Arianna Huffington", "Dünyada ne zaman bir şey yaparsan yap; eleştiri olacak.", "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823__340.jpg");
-        Quotes quotes4 = new Quotes("Jack Ma", "Gerçek başarısızlık, hiçbir şey denemeden öylece oturmaktır.", "https://pbs.twimg.com/media/E9YJOcmWQAczMrY.jpg");
-        Quotes quotes5 = new Quotes("Albert Einstein", "Hayal gücü bilgiden kuvvetlidir.", "https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg?size=626&ext=jpg");
-        Quotes quotes6 = new Quotes("Mark Twain", "İlerleyebilmenin sırrı başlamaktır.", "https://i.pinimg.com/originals/a7/3d/6e/a73d6e4ac85c6a822841e449b24c78e1.jpg");
-        Quotes quotes7 = new Quotes("Arianna Huffington", "Dünyada ne zaman bir şey yaparsan yap; eleştiri olacak.", "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823__340.jpg");
-        Quotes quotes8 = new Quotes("Jack Ma", "Gerçek başarısızlık, hiçbir şey denemeden öylece oturmaktır.", "https://pbs.twimg.com/media/E9YJOcmWQAczMrY.jpg","TR","İlham");
-        Quotes quotes9 = new Quotes("Jack Ma", "test bu bir test sözüdür sadfsdfsdf adsfsdfsdf sdfsdf.", "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500","TR","Motivasyon");
-        quotesArrayList.add(quotes1);
-        quotesArrayList.add(quotes9);
-        quotesArrayList.add(quotes2);
-        quotesArrayList.add(quotes3);
-        quotesArrayList.add(quotes4);
-        quotesArrayList.add(quotes5);
-        quotesArrayList.add(quotes6);
-        quotesArrayList.add(quotes7);
-        quotesArrayList.add(quotes8);
-        quotesArrayList.add(quotes1);
-        quotesArrayList.add(quotes2);
-        quotesArrayList.add(quotes3);
-        quotesArrayList.add(quotes4);
-        quotesArrayList.add(quotes5);
-        quotesArrayList.add(quotes6);
-        quotesArrayList.add(quotes7);
-        quotesArrayList.add(quotes8);
-*/

@@ -264,11 +264,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.nav_our_website) {
-            Intent i = new Intent(Intent.ACTION_VIEW);
-            i.setData(Uri.parse(OUR_URL));
-            startActivity(i);
-        } else {
-            System.out.println("aktiviteye gidilemedi -----------------");
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(OUR_URL)));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
