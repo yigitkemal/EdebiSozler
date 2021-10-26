@@ -52,11 +52,13 @@ import java.util.UUID;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    String OUR_URL = "https://edebisozler.com/";
 
     ActivityMainBinding binding;
-    ActionBarDrawerToggle drawerToggle;
 
+    ActionBarDrawerToggle drawerToggle;
     DrawerLayout mDrawer;
     Toolbar toolbar;
 
@@ -80,17 +82,19 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+        mDrawer = (DrawerLayout)findViewById(R.id.drawer_layout);
         drawerToggle = setupDrawerToggle();
 
         drawerToggle.setDrawerIndicatorEnabled(true);
+        mDrawer.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
 
-        mDrawer.addDrawerListener(drawerToggle);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nvView);
+        navigationView.setNavigationItemSelectedListener(this);
 
         //viewpager ile fragmentimin içini dolduran alan
         ViewpagerAdapter adapter = new ViewpagerAdapter(this);
-
         binding.mainActivityViewpager.setAdapter(adapter);
 
         //tablar için gerekli alan
@@ -106,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
                 tab.setText(tabTitle);
             }
         }).attach();
-
 
     }
 
@@ -130,9 +133,12 @@ public class MainActivity extends AppCompatActivity {
         drawerToggle.onConfigurationChanged(newConfig);
     }
 
+    //appbar üzerindeki butonların kontrolü burada
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // The action bar home/up action should open or close the drawer.
+
+        System.out.println("burası çalıştı");
         if (drawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
@@ -152,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //yıldızlı alanı açıyor
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.appbar_right_menu,menu);
@@ -159,6 +166,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+    //buradan aşağısı izin kontrolleri
     public void saveImage(View view) {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)){
@@ -249,4 +258,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.nav_our_website) {
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(OUR_URL));
+            startActivity(i);
+        } else {
+            System.out.println("aktiviteye gidilemedi -----------------");
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
 }
