@@ -36,6 +36,14 @@ import android.widget.ToggleButton;
 import com.example.edebisozler.R;
 import com.example.edebisozler.adapter.ViewpagerAdapter;
 import com.example.edebisozler.databinding.ActivityMainBinding;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdLoader;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.nativead.NativeAd;
+import com.google.android.gms.ads.nativead.NativeAdOptions;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
@@ -53,6 +61,16 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    // uygulama kimliği
+    // ca-app-pub-2198773595076159~3429436594
+
+    // liste reklamı
+    // ca-app-pub-2198773595076159/7177109918
+
+    String APP_AD_CODE = "ca-app-pub-2198773595076159~3429436594";
+    String AD_CODE = "ca-app-pub-2198773595076159/7177109918";
+    String AD_TEST_CODE = "ca-app-pub-3940256099942544/2247696110";
 
     String OUR_URL = "https://edebisozler.com/";
 
@@ -96,6 +114,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //viewpager ile fragmentimin içini dolduran alan
         ViewpagerAdapter adapter = new ViewpagerAdapter(this);
         binding.mainActivityViewpager.setAdapter(adapter);
+
+        //reklam alanım
+       /* MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+
+            }
+        });
+
+        AdLoader adLoader = new AdLoader.Builder(this, "ca-app-pub-3940256099942544/2247696110")
+                .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
+                    @Override
+                    public void onNativeAdLoaded(NativeAd NativeAd) {
+                        // Show the ad.
+                    }
+                })
+                .withAdListener(new AdListener() {
+                    @Override
+                    public void onAdFailedToLoad(LoadAdError adError) {
+                        // Handle the failure by logging, altering the UI, and so on.
+                    }
+                })
+                .withNativeAdOptions(new NativeAdOptions.Builder()
+                        // Methods in the NativeAdOptions.Builder class can be
+                        // used here to specify individual options settings.
+                        .build())
+                .build();
+*/
 
         //tablar için gerekli alan
         new TabLayoutMediator(binding.mainActivityTabLayout,binding.mainActivityViewpager,new TabLayoutMediator.TabConfigurationStrategy(){

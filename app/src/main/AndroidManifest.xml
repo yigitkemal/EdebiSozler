@@ -17,6 +17,11 @@
         android:supportsRtl="true"
         android:requestLegacyExternalStorage="true"
         android:theme="@style/Theme.EdebiSozler">
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2198773595076159~3429436594"/>
+
         <activity android:name=".activity.FavoriteActivity"></activity>
         <activity
             android:name=".activity.PopupActivity"
@@ -28,6 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

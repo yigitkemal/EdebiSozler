@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerViewAdapter.MenuRecyclerViewHolder> implements View.OnClickListener{
+public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerViewAdapter.MenuRecyclerViewHolder>{
 
     ArrayList<Quotes> quotesList;
 
@@ -35,12 +35,6 @@ public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerVi
         }
     }
 
-
-
-    @Override
-    public void onClick(View v) {
-
-    }
 
     @NonNull
     @Override

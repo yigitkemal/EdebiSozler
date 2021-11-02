@@ -63,8 +63,6 @@ public class MenuFragment extends Fragment {
         loadData();
 
 
-
-
         return view;
     }
 
