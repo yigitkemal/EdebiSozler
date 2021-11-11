@@ -10,21 +10,20 @@
 * [Authors](#Authors)
 
 ## General Info
-In this project, I
+In this project, I aimed to be able to share and store quotations easily over the phone. The application basically produces a jpeg output for us by combining images and quotes. These are jpeg images. allows us to manage inside and outside the app
 
 ## How to Use
-On the first page, 
+When you enter the application, you will encounter direct quotes. In order to display these quotes in two different ways, I divided them into two different layers, and thus I got different views. You can add the quotes you like to your favourites, then you can perform similar actions in your favourites.
 
 ## Technologies
-I developed an android application with Java. The technologies I use are as follows;
+I developed an android application with Java. I keep the information of quotes on a host. I also did a simple backend coding with PHP to access here. I am pulling this data that I have kept from my host with a retrofit. The technologies I use are as follows;
 *Java (In this project, android targetVersionsdk: 30 is used as minVersionSdk: 23.) 
 *Retrofit
 *Picasso
 *Room
 *RxJava
+*PHP
 
-## Additional Info
-For this project, 
 
 ## Authors
 * **Yigit Kemal Agac** - [yigitkemal](https://github.com/yigitkemal)
