@@ -32,14 +32,14 @@ For this project,
 
 * The light mode pages of the application are below.
 
-<img src="https://thetreemedia.com/wp-content/uploads/2021/11/Screenshot_20211111-143618_Edebi-Szler.jpg" width="200"/> <img src="https://thetreemedia.com/wp-content/uploads/2021/11/Screenshot_20211111-143611_Edebi-Szler.jpg" width="200"/> <img src="https://thetreemedia.com/wp-content/uploads/2021/11/Screenshot_20211111-143731_Edebi-Szler.jpg" width="200"/> <img src="https://thetreemedia.com/wp-content/uploads/2021/11/Screenshot_20211111-143623_Edebi-Szler.jpg" width="200"/> <img src="https://thetreemedia.com/wp-content/uploads/2021/11/Screenshot_20211111-143634_Edebi-Szler-1.jpg" width="200"/>
+<img src="https://thetreemedia.com/wp-content/uploads/2021/11/Screenshot_20211111-143618_Edebi-Szler.jpg" width="200"/> <img src="https://thetreemedia.com/wp-content/uploads/2021/11/Screenshot_20211111-143611_Edebi-Szler.jpg" width="200"/> <img src="https://thetreemedia.com/wp-content/uploads/2021/11/Screenshot_20211111-143731_Edebi-Szler.jpg" width="200"/> <img src="https://thetreemedia.com/wp-content/uploads/2021/11/Screenshot_20211111-143623_Edebi-Szler.jpg" width="200"/> <img src="https://thetreemedia.com/wp-content/uploads/2021/11/Screenshot_20211111-143634_Edebi-Szler-1.jpg" width="200"/> <img src="https://thetreemedia.com/wp-content/uploads/2021/11/Screenshot_20211111-143643_Android-System-1.jpg" width="200"/>
 
 
 * This application also has dark mode and works in harmony with the dark mode of your phone.
 
 <img src="https://thetreemedia.com/wp-content/uploads/2021/11/Screenshot_20211111-143255_Edebi-Szler.jpg" width="200"/> <img src="https://thetreemedia.com/wp-content/uploads/2021/11/Screenshot_20211111-143303_Edebi-Szler.jpg" width="200"/> <img src="https://thetreemedia.com/wp-content/uploads/2021/11/Screenshot_20211111-143315_Edebi-Szler.jpg" width="200"/> <img src="https://thetreemedia.com/wp-content/uploads/2021/11/Screenshot_20211111-143357_Edebi-Szler.jpg" width="200"/> 
 <img src="https://thetreemedia.com/wp-content/uploads/2021/11/Screenshot_20211111-143412_Edebi-Szler.jpg" width="200"/> 
-<img src="https://thetreemedia.com/wp-content/uploads/2021/11/Screenshot_20211111-143323_Edebi-Szler.jpg" width="200"/>
+<img src="https://thetreemedia.com/wp-content/uploads/2021/11/Screenshot_20211111-143323_Edebi-Szler.jpg" width="200"/> <img src="https://thetreemedia.com/wp-content/uploads/2021/11/Screenshot_20211111-143433_Android-System.jpg" width="200"/>
 
 
 
